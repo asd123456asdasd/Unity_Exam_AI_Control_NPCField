@@ -449,9 +449,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a508e6293d0ddf49b586b6cd94c85f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1.28
-  JumpForce: 28.5
-  isGround: 0
+  speed: 50
+  jump: 0
+  IsGround: 0
+--- !u!114 &1961258369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1961258364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a508e6293d0ddf49b586b6cd94c85f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  jump: 0
+  IsGround: 0
+--- !u!114 &1961258371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1961258364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a508e6293d0ddf49b586b6cd94c85f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  jump: 0
+  IsGround: 0
 --- !u!1 &1972872376
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +551,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100096, guid: 320b1c2af77554f99a1658df4a6d3d5c,
     type: 3}
   m_PrefabInternal: {fileID: 1780668517}
+--- !u!114 &2112987569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2112987568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae20aa3f2fe43643b7cb18472d6c279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Say: "\u65E9\u5B89\u4F60\u597D"
+  SaySpeed: 1.5
+  Complete: 0
+  BateryFinish: 5
+  Batery: 0
 --- !u!114 &2112987571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,5 +581,5 @@ MonoBehaviour:
   Say: "\u65E9\u5B89\u4F60\u597D"
   SaySpeed: 0.2
   Complete: 0
-  Batery: 0
   BateryFinish: 0
+  Batery: 0

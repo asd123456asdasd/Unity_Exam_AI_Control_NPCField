@@ -1,58 +1,43 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Ball : MonoBehaviour {
-    [Header("移動")]
-    [Range(0, 5)] public float Speed;
-
+public class Ball : MonoBehaviour
+{
+    [Header("速度")]
+    [Range(0, 100)]
+    public int speed = 50;
     [Header("跳躍")]
-    [Range(0, 100)] public float JumpForce;
+    [Range(0, 300)]
+    public int jump = 0;
+    [Header("是否在地板上")]
+    public bool IsGround = false;
 
-    float Timer;
-    public bool isGround = false;
-    Rigidbody rgbdy;
-    // Use this for initialization
-    void Start () {
+    private Rigidbody r3d;
 
-        rgbdy = this.GetComponent<Rigidbody>();
+    private void Start()
+    {
+        r3d = GetComponent<Rigidbody>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void FixedUpdate()
+    {
+        Walk();
+    }
+
+    private void Walk()
+    {
+
         if (Input.GetKey(KeyCode.W))
-        {
-            this.transform.Translate(0, 0, Speed * 1, Space.Self);
-        }
+            r3d.AddForce(new Vector3(0, 0, speed));
         if (Input.GetKey(KeyCode.S))
-        {
-            this.transform.Translate(0, 0, -Speed * 1, Space.Self);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            this.transform.Translate(Speed * 1, 0, 0, Space.Self);
-        }
+            r3d.AddForce(new Vector3(0, 0, -speed));
         if (Input.GetKey(KeyCode.A))
-        {
-            this.transform.Translate(-Speed * 1, 0, 0, Space.Self);
-        }
-        if (isGround == true)
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                Jump();
-            }
-        }
+            r3d.AddForce(new Vector3(-speed, 0, 0));
+        if (Input.GetKey(KeyCode.D))
+            r3d.AddForce(new Vector3(speed, 0, 0));
     }
-
-    public void Jump()
+    private void Jump()
     {
-        rgbdy.AddForce(Vector3.up * JumpForce);
-        isGround = false;
-    }
-    void OnCollisionStay(Collision other)
-    {
-        isGround = true;
+        if (Input.GetKeyDown(KeyCode.Space))
+            r3d.AddForce(new Vector3(0, jump, 0));
     }
 }
-	
